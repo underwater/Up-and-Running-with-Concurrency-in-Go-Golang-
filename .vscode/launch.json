@@ -1,6 +1,7 @@
 {
     "version": "0.2.0",
     "configurations": [
+        // Go configurations
         {
             "name": "Go - Launch File",
             "type": "go",
@@ -9,29 +10,33 @@
             "program": "${file}",
             "env": {},
             "args": []
-          },
-      {
-        "name": "Go - Launch Package",
-        "type": "go",
-        "request": "launch",
-        "mode": "debug",
-        "program": "${workspaceFolder}",
-        "env": {},
-        "args": []
-      },
-      {
-        "name": "Node.js: Current File",
-        "type": "node",
-        "request": "launch",
-        "program": "${file}",
-      },
-      { 
-        "name": "Python",
-        "type": "python",
-        "request": "launch",
-        "program": "${file}",
-        "console": "integratedTerminal"
-    }
+        },
+        {
+            "name": "Go - Launch Package",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "${workspaceFolder}",
+            "env": {},
+            "args": []
+        },
+        // Node.js configuration
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Node.js File",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/${relativeFile}"
+        },
+        // Python configuration
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        }
     ]
-  }
-  
+}
